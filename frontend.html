@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RetailGuard Risk Checker</title>
+</head>
+<body>
+  <h2>🛡️ RetailGuard - User Risk Predictor</h2>
+
+  <form id="predictForm">
+    <label>Session Time: <input type="number" name="session_time" /></label><br>
+    <label>Clicks: <input type="number" name="clicks" /></label><br>
+    <label>Cart Adds: <input type="number" name="cart_adds" /></label><br>
+    <label>Reviews: <input type="number" name="reviews" /></label><br>
+    <button type="submit">Check Risk</button>
+  </form>
+
+  <div id="result" style="margin-top: 20px;"></div>
+
+  <script>
+    document.getElementById("predictForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+  
+      const data = {
+        session_time: parseFloat(e.target.session_time.value),
+        clicks: parseFloat(e.target.clicks.value),
+        cart_adds: parseFloat(e.target.cart_adds.value),
+        reviews: parseFloat(e.target.reviews.value),
+      };
+  
+      try {
+        const response = await fetch("http://127.0.0.1:5000/predict", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+  
+        if (!response.ok) {
+          throw new Error("Server error: " + response.statusText);
+        }
+  
+        const result = await response.json();
+        console.log("✅ API Response:", result);
+  
+        document.getElementById("result").innerHTML = `
+          <p><strong>Risk Score:</strong> ${result.risk_score}</p>
+          <p><strong>Status:</strong> ${result.is_bot ? "🛑 BOT Detected!" : "✅ Normal User"}</p>
+        `;
+      } catch (error) {
+        console.error("❌ Error:", error);
+        document.getElementById("result").innerHTML = `
+          <p style="color:red;">Error: ${error.message}</p>
+        `;
+      }
+    });
+  </script>  
+</body>
+</html>
