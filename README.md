@@ -48,12 +48,3 @@ RetailGuard leverages machine learning to analyze user behavior and flag anomali
 2. Anomaly detection model evaluates behavior for threats.
 3. High-risk sessions are logged to Firebase with risk scores.
 4. (Optional) Visualization tools can show trends over time.
-
----
-
-## 🚀 Quick Start
-
-1. Clone the repository
-   ```bash
-   git clone https://github.com/your-username/retailguard.git
-   cd retailguard
