@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RetailGuard Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>RetailGuard Dashboard</h1>
+
+    <div class="cards">
+      <div class="card"><span>🔒</span> 42 anomalies flagged today</div>
+      <div class="card"><span>🔴</span> 3 critical alerts</div>
+      <div class="card"><span>📊</span> Avg risk score: 0.72</div>
+    </div>
+
+    <div class="grid">
+      <!-- Live Alerts Table -->
+      <div class="panel full">
+        <h2>Live Alerts</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>User ID</th>
+              <th>Timestamp</th>
+              <th>Risk Score</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>user123</td>
+              <td>2024-04-24 14:23</td>
+              <td><span class="dot green"></span> Normal</td>
+              <td>Blocked</td>
+            </tr>
+            <tr>
+              <td>user456</td>
+              <td>2024-04-24 14:21</td>
+              <td><span class="dot orange"></span> Suspicious</td>
+              <td>Reviewed</td>
+            </tr>
+            <tr>
+              <td>user453</td>
+              <td>2024-04-24 14:17</td>
+              <td><span class="dot red"></span> High</td>
+              <td>Reviewed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Top Anomaly Triggers -->
+      <div class="panel">
+        <h2>Top Anomaly Triggers</h2>
+        <div class="bar">
+          <p>Excessive review writing</p>
+          <div class="progress"><div style="width: 70%"></div></div>
+        </div>
+        <div class="bar">
+          <p>&lt;5s checkout time</p>
+          <div class="progress"><div style="width: 60%"></div></div>
+        </div>
+        <div class="bar">
+          <p>Unusual login location</p>
+          <div class="progress"><div style="width: 40%"></div></div>
+        </div>
+      </div>
+
+      <!-- Top Anomaly Empty Placeholder -->
+      <div class="panel">
+        <h2>Top Anomaly</h2>
+        <div class="placeholder"></div>
+      </div>
+
+      <!-- User Session Analyzer -->
+      <div class="panel">
+        <h2>User Session Analyzer</h2>
+        <label>User ID</label>
+        <input type="text" id="userId" placeholder="ELogicee" />
+        <button onclick="checkAnomaly()">Check Anomaly</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
