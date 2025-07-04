@@ -9,7 +9,7 @@ RetailGuard is a lightweight, privacy-aware AI system designed to detect suspici
 E-commerce platforms face frequent cybersecurity threats:
 
 - Bot-generated checkouts
-- Fake user reviews
+- Fake user reviews 
 - Session hijacking or rapid fire cart spam 
 - Lack of real-time visibility into anomalous behavior
 
