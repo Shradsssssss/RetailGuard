@@ -10,7 +10,7 @@ E-commerce platforms face frequent cybersecurity threats:
 
 - Bot-generated checkouts
 - Fake user reviews
-- Session hijacking or rapid fire cart spam
+- Session hijacking or rapid fire cart spam 
 - Lack of real-time visibility into anomalous behavior
 
 Traditional rule-based systems are often rigid and require constant tuning. There is a growing need for adaptive, privacy-preserving AI solutions.
