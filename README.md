@@ -47,4 +47,4 @@ RetailGuard leverages machine learning to analyze user behavior and flag anomali
 1. Simulated user session data is passed to the backend.
 2. Anomaly detection model evaluates behavior for threats.
 3. High-risk sessions are logged to Firebase with risk scores.
-4. (Optional) Visualization tools can show trends over time.
+4. (Optional) Visualization tools can show trends over time. 
