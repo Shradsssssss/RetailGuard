@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";     
   
 // Your Firebase configuration (from Firebase Console)
-const firebaseConfig = {   
+const firebaseConfig = {         
   apiKey: "YOUR_API_KEY",   
   authDomain: "your-project.firebaseapp.com", 
   projectId: "your-project-id",         
